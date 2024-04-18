@@ -1,0 +1,153 @@
+/* 开发阶段所用到的style，后期得删除 */
+
+.wapperbox {
+    width: 300px;
+    height: 300px;
+    margin: 150px auto 0 auto;
+}
+
+
+.buttom1-wapper {
+    position: relative;
+    padding: 10px 20px 10px 20px;
+    width: 110px;
+    height: 54px;
+    background-color: #fff;
+    border: 2px solid #111827;
+    border-radius: 10px;
+    box-shadow: 3px 3px 0px #111827;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.buttom1-wapper:hover {
+    box-shadow: 0px 0px 0px #111827;
+}
+
+.buttom1-text {
+    color: #111827;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.buttom1-text.style1 {
+    transition: all 0.3s ease 0s;
+    /* .style2 */
+}
+
+.buttom1-wapper:hover .buttom1-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    color: #fff;
+}
+
+.buttom1-bg {
+    position: absolute;
+    top: 60px;
+    left: -10px;
+    width: 190px;
+    height: 190px;
+    background-color: #111827;
+    transform: rotatez(0deg);
+    transition: all 0.3s ease 0s;
+}
+
+.buttom1-wapper:hover .buttom1-bg {
+    transform-origin: left top;
+    transform: rotatez(-90deg);
+}
+
+/* buttom2 的箭头图标代码 */
+.gg-arrow-right {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs, 1));
+    width: 22px;
+    height: 22px;
+}
+
+.gg-arrow-right::after,
+.gg-arrow-right::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    right: 3px;
+}
+
+.gg-arrow-right::after {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    bottom: 7px;
+    color: #4ade80;
+}
+
+.gg-arrow-right::before {
+    width: 16px;
+    height: 2px;
+    bottom: 10px;
+    background: currentColor;
+    color: #4ade80;
+}
+
+/* buttom2 的样式代码 */
+.buttom2-wapper {
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    position: relative;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px 10px 20px;
+    width: fit-content;
+    cursor: pointer;
+    border-radius: 5px;
+    border-left: 1px solid #e5e7eb;
+    border-right: 1px solid #e5e7eb;
+    border-top: 1px solid #e5e7eb;
+    background: linear-gradient(to right , #4f46e5, #4f46e5) no-repeat;
+    background-size: 100% 10%;
+    background-position: bottom;
+    transition: background-size 0.2s ease-in-out;
+    overflow: hidden;
+}
+.buttom2-wapper:hover {
+    background-size: 100% 100%;
+}
+.buttom2-icon2 {
+    position: absolute;
+    left: -60px;
+    transition: all 0.3s ease-in-out;
+}
+.buttom2-icon1 {
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all 0.2s ease-in-out;
+}
+.buttom2-wapper:hover .buttom2-icon1 {
+    transform: translateX(50px);
+    opacity: 0;
+}
+.buttom2-wapper:hover .buttom2-icon2 {
+    left: 18px;
+}
+.buttom2-text{
+    color: #4f46e5;
+    font-size: 16px;
+    transform: translateX(0px);
+    transition: all 0.3s ease-in-out;
+}
+.buttom2-wapper:hover .buttom2-text{
+    color: #fff;
+    transform: translateX(30px);
+}
