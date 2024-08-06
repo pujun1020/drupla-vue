@@ -11,7 +11,7 @@ const formfun = (e: Event) => {
     e.defaultPrevented;
     let data = new FormData(inputdata.value!)
     data.set('username', "pujun")
-    console.log(Object.fromEntries(data.entries()), 99)
+    /* console.log(Object.fromEntries(data.entries()), 99) */
 }
 </script>
 

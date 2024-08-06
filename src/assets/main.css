@@ -4,7 +4,13 @@
 
 *{
     scroll-behavior: smooth;
+    --main-color:#f54325;
 }
+::selection{
+  background: var(--main-color);
+  color: #fff;
+}
+
 ol li {
     color: #000;
     font-size: 25px;
@@ -14,6 +20,11 @@ section p {
     font-size: 16px;
     color: #fff;
     text-transform: lowercase;
+}
+img{
+    max-width: 100%;
+    width: 100%;
+    object-fit: cover;
 }
 code {
     background: #e0dbdb;
@@ -54,3 +65,24 @@ code {
     white-space: break-spaces !important;
     word-wrap: normal !important;
   }
+
+/* layui样式 */
+  div.layui-exception-details-title{
+    color: rgb(177, 171, 163) !important;
+  }
+  .layui-exception-details-describe{
+    color: #434e59 !important;
+  }
+
+  /*scroll-bar*/
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #c6c6c6;
+}
+::-webkit-scrollbar-track {
+  background-color: #fff;
+}

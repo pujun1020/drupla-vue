@@ -2,23 +2,49 @@
 import { ref, onMounted, reactive, onBeforeMount } from 'vue'
 import type { userData } from "@/types/Interface/index";
 /* const userData= ref(await loadUserData() as userData)  */
-let userData = reactive({} as userData)
-const loadUserData = async () => {
+let userData = reactive({
+    name: '',
+    pic: '',
+    bio: ''
+} as userData)
+const loadUserData = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve({
-                name: 'Matt Maribojoc',
-                pic: 'https://images.dog.ceo/breeds/pekinese/n02086079_9847.jpg',
+                name: 'Matt Maribojoc 蒲俊',
+                pic: 'https://zxuqian.cn/img/logo.webp',
                 bio: 'I run a VueJS community over at, develop web sites, and post whatever I find cool on the Internet.',
             })
-        }, 4000)
+        }, 2000)
     })
 }
 
-let { name, pic, bio } = await loadUserData() as userData
-userData.name = name
-userData.pic = pic
-userData.bio = bio
+let a=()=>{
+    console.log('5555555555555')
+}
+let b=()=>{
+    console.log(1)
+}
+const pJfun = (fun:Function) => {
+    return new Promise((resolve) => {
+        fun()
+        resolve('')
+    })
+}
+await pJfun(a)
+await pJfun(b)
+
+
+
+
+
+
+
+
+
+
+let apiuserData = await loadUserData() as userData
+userData={...userData,...apiuserData}
 /* 如果使用 <script setup>，那么顶层 await 表达式会自动让该组件成为一个异步依赖：如果在生命周期钩子中完成， await 表达式就是非顶层了，Suspense就会失效*/
 /* 还需要熟读reactive，不能直接替换整个对象，操作Object.assign(param,param1) 直接进行赋值改变。是实现方式之一 */
 </script>

@@ -1,46 +1,28 @@
 <script setup lang="ts">
 
 import { RouterLink, RouterView } from 'vue-router'
-import Menu from "@/components/menu/Menu.vue";
-import mouseFollow from "@/components/mouseFollow/mouseFollow.vue";
-import { onBeforeMount, onMounted, ref } from "vue";
-import loading from '@/components/loading/loading.vue'
+import Menu from "@/components/PjMenu/PjMenu.vue";
+import mouseFollow from "@/components/PjMouseFollow/PjMouseFollow.vue";
+import loading from '@/components/PjLoading/PjLoading.vue'
 import "animate.css"
-/* let isloading=ref(true)
-onMounted(() => {
-  document.onreadystatechange = function () {
-    if (document.readyState == "complete") {
-      isloading.value = false;
-    }
-  };
-}); */
+
 </script>
 
 <template>
-  <div class="menu-height" style="height: 80px;">
-    <Menu></Menu>
-    <div id="progress"></div>
-  </div>
-  
+  <Menu></Menu>
+  <div id="progress"></div>
   <mouseFollow></mouseFollow>
   <div class="site-content">
-    <RouterView v-slot="{ Component }">
-      <template v-if="Component">
-        <Suspense>
-          <template #default>
-            <component :is="Component"></component>
-          </template>
-          <!-- 加载中状态 -->
-          <template #fallback>
-            <loading></loading>
-          </template>
-        </Suspense>
-      </template>
-    </RouterView>
+    <RouterView></RouterView>
+    <loading></loading>
   </div>
 </template>
 
 <style scoped>
+/* .site-content {
+  height: 100vh;
+} */
+
 @keyframes grow-progress {
   from {
     transform: scaleX(0);
@@ -67,21 +49,26 @@ onMounted(() => {
   0% {
     transform: scaleX(0);
   }
+
   100% {
     transform: scaleX(1);
   }
 }
+
 @keyframes colorChange {
   0% {
     background-color: red;
   }
+
   50% {
     background-color: yellow;
   }
+
   100% {
     background-color: lime;
   }
 }
+
 #progress {
   animation:
     scaleProgress auto linear,
