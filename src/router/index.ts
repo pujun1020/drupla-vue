@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { useLoadingStore } from '@/stores/loading'
 import { useMenuIsShowStore } from "@/stores/menuIsShow";
+import { KeepAlive } from 'vue';
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   scrollBehavior(to, from, savedPosition) {
@@ -49,6 +50,15 @@ const router = createRouter({
       component: () => import('@/views/HerPage.vue'),
     },
     {
+      path: '/TS',
+      name: 'TS',
+      meta: {
+        title: 'TS',
+        index: 1,
+      },
+      component: () => import('@/views/TS.vue'),
+    },
+    {
       path: '/resume',
       name: 'resume',
       meta: {
@@ -82,7 +92,7 @@ const router = createRouter({
       name: 'PostPageList',
       meta: {
         title: '笔记列表页面',
-        page:'postPageList',
+        page: 'postPageList',
       },
       component: () => import('@/views/PostPageList.vue')
     },
@@ -112,6 +122,16 @@ const router = createRouter({
         index: 5,
       },
       component: () => import('@/views/ContactPage.vue'),
+    },
+    {
+      path: '/Test',
+      name: 'Testuuu',
+      meta: {
+        title: '联系我',
+        index: 5,
+        KeepAlive: true,
+      },
+      component: () => import('@/views/Test/Test.vue'),
     },
 
     /* 404页面 */

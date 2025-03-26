@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, reactive, defineAsyncComponent, watchEffect, onMounted } from "vue";
+import { ref, reactive, defineAsyncComponent, watchEffect, onMounted, onDeactivated, onActivated } from "vue";
 import PjHover from '@/components/PjHoverImg/PjHoverImg.vue';
 import Intro from "@/components/PjIntro/PjIntro.vue";
 import MainContainer from '@/components/PjMian/PjMian.vue';
@@ -13,7 +13,7 @@ import lazyLoadImages from "@/utils/JsUtil/util.lazyLoad";
 import { openFullscreen,openElementFullscreen } from '@/utils/JsUtil/util.common'
 import PjHomeArticleList from '@/components/PjHomeArticleList/PjHomeArticleList.vue'
 import ProfileCard from '@/components/ProfileCard/ProfileCard.vue'
-
+import { ElProgress, ElButton} from "element-plus"
 // 实现平滑滚动到锚点的方法
 const scrollToSection1 = (id: string) => {
   const dom = document.querySelector(id)
@@ -27,12 +27,26 @@ onMounted(() => {
   /* console.log(TimeUtils.formatTime(currentDate)) */
 });
 
+onActivated(() => {
+  // 调用时机为首次挂载
+  // 以及每次从缓存中被重新插入时
+  console.log("🚀 ~ onActivated ~ 调用时机为首次挂载--------:")
+})
 
+
+onDeactivated(() => {
+  // 在从 DOM 上移除、进入缓存
+  // 以及组件卸载时调用
+  console.log("🚀 ~ onDeactivated ~ DOM--------:")
+})
 </script>
 
 <template>
 
-  <div class="">
+  <div class="">---------
+<!--     333333333333333333
+        <el-button type="warning">Warning</el-button>
+    <el-button type="danger">Danger</el-button> -->
     <!-- <ProfileCard></ProfileCard> -->
     <Intro @mose="scrollToSection1"></Intro>
     <Homebaner></Homebaner>

@@ -1,8 +1,10 @@
 <script setup lang="ts">
 import { ref, reactive, onMounted, onUnmounted } from "vue";
-import type { leftBJ } from '@/types/Interface/index.ts'
+import type { leftBJ } from '@/types/Interface/index'
 const backgroundImg = ref('url(/articleLeft2.jpg)');
 import { onBeforeRouteLeave, useRoute, useRouter } from "vue-router";
+const router = useRouter();
+console.log(router,"🚀 ~ router:", router.options)
 let route = useRoute()
 let currentIndex = ref(0);
 let timer: number;
