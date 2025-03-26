@@ -11,7 +11,7 @@ import { onActivated, onDeactivated } from 'vue'
 onActivated(() => {
   // 调用时机为首次挂载
   // 以及每次从缓存中被重新插入时
-  console.log("🚀 ~ onActivated ~ 调用时机为首次挂载:")
+  console.log("🚀 ~ onActivated ~ 调用时机为首次挂载8888:")
 })
 
 
